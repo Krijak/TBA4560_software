@@ -1,0 +1,1 @@
+C:\Users\krist\Desktop\HololensGPS-master (3)\HololensGPS-master\Unity\UWP\HololensGPS\HololensGPS.csproj;x86

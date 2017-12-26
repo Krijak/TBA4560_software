@@ -1,0 +1,58 @@
+apply plugin: 'com.android.application'
+apply plugin: 'maven'
+
+repositories {
+    mavenCentral()
+//    maven {
+//        url "https://repo.boundlessgeo.com/main/"
+//    }
+}
+
+dependencies {
+    //compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:26.+'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    testCompile 'junit:junit:4.12'
+    compile 'com.google.android.gms:play-services-maps:11.0.2'
+//    compile 'org.apache.maven.plugins:maven-compiler-plugin:3.7.0'
+//    compile 'org.geotools:gt-main:18.1'
+    // https://mvnrepository.com/artifact/org.geotools/gt-main
+//    compile group: 'org.geotools', name: 'gt-geojson', version: '16.1'
+    // https://mvnrepository.com/artifact/org.geotools/gt-api
+//    compile group: 'org.geotools', name: 'gt-api', version: '18.1'
+    // https://mvnrepository.com/artifact/org.geotools/gt-main
+//    compile group: 'org.geotools', name: 'gt-main', version: '15.0'
+    // https://mvnrepository.com/artifact/org.springframework/spring-aop
+//    compile group: 'org.springframework', name: 'spring-aop', version: '5.0.2.RELEASE'
+    // https://mvnrepository.com/artifact/org.locationtech.geogig/geogig-geotools
+//    compile group: 'org.locationtech.geogig', name: 'geogig-geotools', version: '1.2.0'
+//    compile group: 'org.geotools', name: 'gt-api', version: '19-SNAPSHOT'
+//    compile 'org.gdal:gdal:2.2.0'
+//    compile 'gov.nasa.worldwind.android:worldwind:0.7.0'
+    compile 'org.osgeo:proj4j:0.1.0'
+
+}
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.2"
+    defaultConfig {
+        applicationId "com.example.mhew.hololensbluetoothgps"
+        minSdkVersion 23
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+

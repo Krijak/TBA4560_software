@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fontFamily="@font/robotothin"
+    android:background="#212121"
+    tools:context="com.example.mhew.hololensbluetoothgps.MainActivity">
+
+
+    <LinearLayout
+        android:layout_width="326dp"
+        android:layout_height="410dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!--<TextView
+            android:fontFamily="@font/Roboto-Thin"
+            android:textColor="#ffffff"
+            android:layout_width="89dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="TIME"
+            android:textAlignment=""
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            tools:text="TIME" />
+
+        <TextView
+            android:id="@+id/textViewTime"
+            android:textColor="#4b7a6c"
+            android:fontFamily="@font/Roboto-Thin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Time"
+            android:textAlignment="" />
+            -->
+
+        <com.example.mhew.hololensbluetoothgps.FontView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/robotothin"
+            android:text="Breddegrad:"
+            android:textColor="#ffffff"
+            android:textSize="28sp"
+            tools:text="Breddegrad:" />
+        <!--android:textAppearance="@style/TextAppearance.AppCompat.Headline"-->
+
+
+    <com.example.mhew.hololensbluetoothgps.FontView
+        android:id="@+id/textViewLatitude"
+        android:textColor="#4b7a6c"
+        android:textSize="36sp"
+        android:fontFamily="@font/robotothin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="63.4148"/>
+
+    <com.example.mhew.hololensbluetoothgps.FontView
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:textColor="#ffffff"
+        android:textSize="28sp"
+        android:fontFamily="@font/robotothin"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Lengdegrad:"
+        tools:text="Lengdegrad:" />
+        <!--android:textAppearance="@style/TextAppearance.AppCompat.Headline"-->
+
+
+    <com.example.mhew.hololensbluetoothgps.FontView
+        android:id="@+id/textViewLongitude"
+        android:textColor="#4b7a6c"
+        android:textSize="36sp"
+        android:fontFamily="@font/robotothin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="63.4148"/>
+
+    <com.example.mhew.hololensbluetoothgps.FontView
+        android:layout_marginTop="10dp"
+        android:textColor="#5e5e5e"
+        android:fontFamily="@font/robotothin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="WGS84, EPSG: 4326" />
+
+    <com.example.mhew.hololensbluetoothgps.FontView
+        android:layout_marginTop="60dp"
+        android:layout_width="match_parent"
+        android:fontFamily="@font/robotothin"
+        android:textColor="#ffffff"
+        android:textSize="28sp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Nord:"
+        tools:text="Nord:" />
+
+    <com.example.mhew.hololensbluetoothgps.FontView
+        android:id="@+id/textViewNorth"
+        android:textColor="#4b7a6c"
+        android:textSize="36sp"
+        android:fontFamily="@font/robotothin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="7032578"/>
+
+    <com.example.mhew.hololensbluetoothgps.FontView
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:fontFamily="@font/robotothin"
+        android:textColor="#ffffff"
+        android:textSize="28sp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Øst:"
+        tools:text="Øst:" />
+
+    <com.example.mhew.hololensbluetoothgps.FontView
+        android:id="@+id/textViewEast"
+        android:textColor="#4b7a6c"
+        android:textSize="36sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="7032578" />
+
+    <com.example.mhew.hololensbluetoothgps.FontView
+        android:layout_marginTop="10dp"
+        android:textColor="#5e5e5e"
+        android:fontFamily="@font/robotothin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="UTM-32 (datum: WGS84), EPSG: 32632"/>
+
+</LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
