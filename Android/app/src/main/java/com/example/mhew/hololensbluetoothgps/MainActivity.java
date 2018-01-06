@@ -313,24 +313,6 @@ public class MainActivity extends AppCompatActivity {
     }
     //endregion GPS
 
-//    public static void convertToUTM(Location location) throws FactoryException, TransformException {
-//        double lat = location.getLatitude();
-//        double lon = location.getLongitude();
-//
-//        GeometryFactory gf = new GeometryFactory();
-//        Coordinate c = new Coordinate(lat, lon);
-//
-//        Point p = gf.createPoint(c);
-//        CoordinateReferenceSystem targetCRS = CRS.decode("EPSG:5972"); //UTM zone 32
-//        CoordinateReferenceSystem sourceCRS = CRS.decode("EPSG:4326"); //WGS84
-//
-//        MathTransform mathTransform = CRS.findMathTransform(sourceCRS, targetCRS, false);
-//        Point p1 = (Point) JTS.transform(p, mathTransform);
-//
-//        Log.d("UTM-coordinate", p1.getCoordinate().toString());
-//
-//    }
-
     public void convertToUTM(Location location){
         String wgsName = "EPSG:4326";
         String utmName = "EPSG:32632";
@@ -357,26 +339,6 @@ public class MainActivity extends AppCompatActivity {
         Log.d("transformWgs", pWgs.toString());
 
         utmCoordinates = pUtm;
-
-
-//        CoordinateConversion c = new CoordinateConversion();
-//        double lat = location.getLatitude();
-//        double lon = location.getLongitude();
-//        String utmCoords = c.latLon2UTM(lat, lon);
-//        Log.d("UTM???:", utmCoords);
-//        String[] split = utmCoords.split("\\s+");
-//
-//        double[] finalUTMCoords = {Float.parseFloat(split[2]),Float.parseFloat(split[3])};
-//
-//
-//        Log.d("nr0:", split[0]);
-//        Log.d("nr1:", split[1]);
-//        Log.d("East:", split[2]);
-//        Log.d("North:", split[3]);
-//        Log.d("finalUTMCoords: ", Double.toString(finalUTMCoords[0]));
-
-
-//        utmCoordinates = finalUTMCoords;
     }
 
 }
