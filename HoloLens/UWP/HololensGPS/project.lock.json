@@ -15778,12 +15778,12 @@
   },
   "project": {
     "restore": {
-      "projectUniqueName": "C:\\Users\\krist\\Desktop\\HololensGPS-master (3)\\HololensGPS-master\\Unity\\UWP\\HololensGPS\\HololensGPS.csproj",
+      "projectUniqueName": "C:\\Users\\krist\\Documents\\Universitetet\\semester9\\TBA4560\\Software\\HoloLens\\UWP\\HololensGPS\\HololensGPS.csproj",
       "projectName": "HololensGPS",
-      "projectPath": "C:\\Users\\krist\\Desktop\\HololensGPS-master (3)\\HololensGPS-master\\Unity\\UWP\\HololensGPS\\HololensGPS.csproj",
-      "projectJsonPath": "C:\\Users\\krist\\Desktop\\HololensGPS-master (3)\\HololensGPS-master\\Unity\\UWP\\HololensGPS\\project.json",
+      "projectPath": "C:\\Users\\krist\\Documents\\Universitetet\\semester9\\TBA4560\\Software\\HoloLens\\UWP\\HololensGPS\\HololensGPS.csproj",
+      "projectJsonPath": "C:\\Users\\krist\\Documents\\Universitetet\\semester9\\TBA4560\\Software\\HoloLens\\UWP\\HololensGPS\\project.json",
       "packagesPath": "C:\\Users\\krist\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\krist\\Desktop\\HololensGPS-master (3)\\HololensGPS-master\\Unity\\UWP\\HololensGPS\\obj\\",
+      "outputPath": "C:\\Users\\krist\\Documents\\Universitetet\\semester9\\TBA4560\\Software\\HoloLens\\UWP\\HololensGPS\\obj\\",
       "projectStyle": "ProjectJson",
       "configFilePaths": [
         "C:\\Users\\krist\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class BtnOnClick : MonoBehaviour {
+
     public Button startPositionBtn;
     public Button endPositionBtn;
     public Text localStartTxt;
@@ -16,6 +17,7 @@ public class BtnOnClick : MonoBehaviour {
     public Text eastTxt;
     public Text globalRelativeTxt;
     public Text localRelativeTxt;
+    public Text debugTxt;
     public GameObject pyramid;
     public GameObject refObject;
     public GameObject mainObject;
@@ -226,8 +228,9 @@ public class BtnOnClick : MonoBehaviour {
         Debug.Log("refObject2mainObject magnitude AFTER: " + (localPositionMainObject-localPositionRefObject).magnitude);
 
         //instansiates objects and rotates mainObject towards north
-        Instantiate(mainObject, localPositionMainObject, Quaternion.FromToRotation(transform.forward, localNorth));
+        GameObject mainObj = Instantiate(mainObject, localPositionMainObject, Quaternion.FromToRotation(transform.forward, localNorth));
         Instantiate(refObject, localPositionRefObject, Camera.main.transform.rotation);
+        PlaceOnGround(mainObj);
         Debug.Log("Instansiate refObject at: " + localPositionRefObject);
     }
 
@@ -247,5 +250,39 @@ public class BtnOnClick : MonoBehaviour {
         Debug.Log("Translert posisjon: " + position);
 
         return position;
+    }
+
+    private float PlaceOnGround(GameObject go)
+    {
+        RaycastHit hit;
+        float yOffset;
+        //int savedLayer;
+        //bool AlignNormals;
+        //Vector3 UpVector = new Vector3(0, 90, 0);
+        debugTxt.text = debugTxt.text + " PlaceOnGround";
+        
+        Bounds bounds = go.GetComponent<Renderer>().bounds;                     // get the renderer's bounds
+        Debug.Log("PlaceOnGround");
+        String rayCast = Physics.Raycast(go.transform.position, -Vector3.up, out hit).ToString();
+
+        debugTxt.text = debugTxt.text + " RayCast: " + rayCast;
+
+        if (Physics.Raycast(go.transform.position, -Vector3.up, out hit))       // check if raycast hits something
+        {
+            
+            yOffset = go.transform.position.y - bounds.min.y;
+            go.transform.position = new Vector3 (go.transform.position.x, -(hit.distance - yOffset), go.transform.position.z);
+            debugTxt.text = debugTxt.text + " new position: " + go.transform.position.ToString();
+            Debug.Log("y-bounds: " + yOffset);
+            Debug.Log("hit distance: " + hit.distance);
+            Debug.Log("new Position: " + go.transform.position);
+            Debug.DrawLine(go.transform.position, hit.point);
+        }
+        else
+        {
+            yOffset = 0;
+        }
+
+        return yOffset;
     }
 }

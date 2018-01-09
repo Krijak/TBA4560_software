@@ -1,1 +1,1 @@
-C:\Users\krist\Desktop\HololensGPS-master (3)\HololensGPS-master\Unity\UWP\HololensGPS\HololensGPS.csproj;x86
+C:\Users\krist\Documents\Universitetet\semester9\TBA4560\Software\HoloLens\UWP\HololensGPS\HololensGPS.csproj;x86
