@@ -249,7 +249,9 @@ public class MainActivity extends AppCompatActivity {
             mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, listener);
             mLocationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, listener);
             currentLocation = mLocationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-            UpdatePosition(currentLocation);
+            if (currentLocation != null){
+                UpdatePosition(currentLocation);
+            }
             Log.i("GPS_Receiver", "startGPS: GPS Started..");
         } catch (SecurityException e) {
         }

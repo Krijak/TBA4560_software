@@ -61,11 +61,7 @@ public class GPS_Receiver : MonoBehaviour
 #if NETFX_CORE
     private async void Watcher_Received(BluetoothLEAdvertisementWatcher sender, BluetoothLEAdvertisementReceivedEventArgs args)
     {
-        //debugTxt.text = debugTxt.text  + " WATCHER RECEIVED ";
-        //Debug.Log(args);
-        //debugTxt.text = args.ToString();
         ushort identifier = args.Advertisement.ManufacturerData[0].CompanyId;
-        //debugTxt.text = debugTxt.text  + " " + identifier + " ";
         byte[] data = args.Advertisement.ManufacturerData[0].Data.ToArray();
         // Updates to Unity UI don't seem to work nicely from this callback so just store a reference to the data for later processing.
         eventProcessor.QueueData(data);

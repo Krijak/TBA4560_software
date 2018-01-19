@@ -31,13 +31,13 @@
     <AppXManifest Include="C:\Users\krist\Documents\Universitetet\semester9\TBA4560\Software\HoloLens\UWP\HololensGPS\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-01-09T12:19:48.444</Modified>
+      <Modified>2018-01-19T10:12:37.630</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\krist\Documents\Universitetet\semester9\TBA4560\Software\HoloLens\UWP\HololensGPS\bin\x86\Debug\HololensGPS.exe">
       <PackagePath>entrypoint\HololensGPS.exe</PackagePath>
-      <Modified>2018-01-09T12:19:38.899</Modified>
+      <Modified>2018-01-19T10:12:28.151</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\krist\.nuget\packages\Microsoft.ApplicationInsights\1.0.0\lib\portable-win81+wpa81\Microsoft.ApplicationInsights.dll">
       <PackagePath>Microsoft.ApplicationInsights.dll</PackagePath>
@@ -501,7 +501,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\krist\Documents\Universitetet\semester9\TBA4560\Software\HoloLens\UWP\HololensGPS\Resource.res">
       <PackagePath>Resource.res</PackagePath>
-      <Modified>2018-01-09T12:18:56.441</Modified>
+      <Modified>2018-01-19T10:10:20.295</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\krist\Documents\Universitetet\semester9\TBA4560\Software\HoloLens\UWP\HololensGPS\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
@@ -555,19 +555,19 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\krist\Documents\Universitetet\semester9\TBA4560\Software\HoloLens\UWP\HololensGPS\Data\boot.config">
       <PackagePath>Data\boot.config</PackagePath>
-      <Modified>2018-01-09T12:18:37.144</Modified>
+      <Modified>2018-01-19T10:10:01.587</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\krist\Documents\Universitetet\semester9\TBA4560\Software\HoloLens\UWP\HololensGPS\Data\globalgamemanagers">
       <PackagePath>Data\globalgamemanagers</PackagePath>
-      <Modified>2018-01-09T12:18:36.292</Modified>
+      <Modified>2018-01-19T10:10:00.721</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\krist\Documents\Universitetet\semester9\TBA4560\Software\HoloLens\UWP\HololensGPS\Data\level0">
       <PackagePath>Data\level0</PackagePath>
-      <Modified>2018-01-09T12:18:34.635</Modified>
+      <Modified>2018-01-19T10:09:59.071</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\krist\Documents\Universitetet\semester9\TBA4560\Software\HoloLens\UWP\HololensGPS\Data\level1">
       <PackagePath>Data\level1</PackagePath>
-      <Modified>2018-01-09T12:18:35.028</Modified>
+      <Modified>2018-01-19T10:09:59.449</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\krist\Documents\Universitetet\semester9\TBA4560\Software\HoloLens\UWP\HololensGPS\Data\Resources\unity default resources">
       <PackagePath>Data\Resources\unity default resources</PackagePath>
@@ -575,43 +575,43 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\krist\Documents\Universitetet\semester9\TBA4560\Software\HoloLens\UWP\HololensGPS\Data\Resources\unity_builtin_extra">
       <PackagePath>Data\Resources\unity_builtin_extra</PackagePath>
-      <Modified>2018-01-09T12:18:37.140</Modified>
+      <Modified>2018-01-19T10:10:01.586</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\krist\Documents\Universitetet\semester9\TBA4560\Software\HoloLens\UWP\HololensGPS\Data\globalgamemanagers.assets">
       <PackagePath>Data\globalgamemanagers.assets</PackagePath>
-      <Modified>2018-01-09T12:18:36.469</Modified>
+      <Modified>2018-01-19T10:10:00.942</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\krist\Documents\Universitetet\semester9\TBA4560\Software\HoloLens\UWP\HololensGPS\Data\sharedassets0.assets">
       <PackagePath>Data\sharedassets0.assets</PackagePath>
-      <Modified>2018-01-09T12:18:36.829</Modified>
+      <Modified>2018-01-19T10:10:01.288</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\krist\Documents\Universitetet\semester9\TBA4560\Software\HoloLens\UWP\HololensGPS\Data\sharedassets1.assets">
       <PackagePath>Data\sharedassets1.assets</PackagePath>
-      <Modified>2018-01-09T12:18:36.848</Modified>
+      <Modified>2018-01-19T10:10:01.309</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\krist\Documents\Universitetet\semester9\TBA4560\Software\HoloLens\UWP\HololensGPS\Data\level0.resS">
       <PackagePath>Data\level0.resS</PackagePath>
-      <Modified>2018-01-09T12:18:34.623</Modified>
+      <Modified>2018-01-19T10:09:59.062</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\krist\Documents\Universitetet\semester9\TBA4560\Software\HoloLens\UWP\HololensGPS\Data\level1.resS">
       <PackagePath>Data\level1.resS</PackagePath>
-      <Modified>2018-01-09T12:18:35.016</Modified>
+      <Modified>2018-01-19T10:09:59.439</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\krist\Documents\Universitetet\semester9\TBA4560\Software\HoloLens\UWP\HololensGPS\Data\sharedassets0.assets.resS">
       <PackagePath>Data\sharedassets0.assets.resS</PackagePath>
-      <Modified>2018-01-09T12:18:36.815</Modified>
+      <Modified>2018-01-19T10:10:01.284</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\krist\Documents\Universitetet\semester9\TBA4560\Software\HoloLens\UWP\HololensGPS\Data\sharedassets1.assets.resS">
       <PackagePath>Data\sharedassets1.assets.resS</PackagePath>
-      <Modified>2018-01-09T12:18:36.845</Modified>
+      <Modified>2018-01-19T10:10:01.306</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\krist\Documents\Universitetet\semester9\TBA4560\Software\HoloLens\UWP\HololensGPS\Data\managedAssemblies.txt">
       <PackagePath>Data\managedAssemblies.txt</PackagePath>
-      <Modified>2018-01-09T12:18:56.399</Modified>
+      <Modified>2018-01-19T10:10:20.234</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\krist\Documents\Universitetet\semester9\TBA4560\Software\HoloLens\UWP\HololensGPS\Data\nativePlugins.txt">
       <PackagePath>Data\nativePlugins.txt</PackagePath>
-      <Modified>2018-01-09T12:18:56.403</Modified>
+      <Modified>2018-01-19T10:10:20.238</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.15063.0\\redist\Debug\x86\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
@@ -624,43 +624,43 @@
     <AppxPackagedFile Include="C:\Users\krist\Documents\Universitetet\semester9\TBA4560\Software\HoloLens\UWP\HololensGPS\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-01-09T11:02:11.766</Modified>
+      <Modified>2018-01-18T20:07:16.742</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\krist\Documents\Universitetet\semester9\TBA4560\Software\HoloLens\UWP\HololensGPS\Assembly-CSharp.dll">
       <PackagePath>Assembly-CSharp.dll</PackagePath>
-      <Modified>2018-01-09T12:19:47.005</Modified>
+      <Modified>2018-01-19T10:12:36.188</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\krist\Documents\Universitetet\semester9\TBA4560\Software\HoloLens\UWP\HololensGPS\UnityEngine.dll">
       <PackagePath>UnityEngine.dll</PackagePath>
-      <Modified>2018-01-09T12:19:47.456</Modified>
+      <Modified>2018-01-19T10:12:36.631</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\krist\Documents\Universitetet\semester9\TBA4560\Software\HoloLens\UWP\HololensGPS\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
-      <Modified>2018-01-09T12:19:47.823</Modified>
+      <Modified>2018-01-19T10:12:37.010</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\krist\Documents\Universitetet\semester9\TBA4560\Software\HoloLens\UWP\HololensGPS\UnityEngine.Timeline.dll">
       <PackagePath>UnityEngine.Timeline.dll</PackagePath>
-      <Modified>2018-01-09T12:19:47.876</Modified>
+      <Modified>2018-01-19T10:12:37.059</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\krist\Documents\Universitetet\semester9\TBA4560\Software\HoloLens\UWP\HololensGPS\nunit.framework.dll">
       <PackagePath>nunit.framework.dll</PackagePath>
-      <Modified>2018-01-09T12:19:47.939</Modified>
+      <Modified>2018-01-19T10:12:37.117</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\krist\Documents\Universitetet\semester9\TBA4560\Software\HoloLens\UWP\HololensGPS\UnityEngine.UI.dll">
       <PackagePath>UnityEngine.UI.dll</PackagePath>
-      <Modified>2018-01-09T12:19:48.042</Modified>
+      <Modified>2018-01-19T10:12:37.217</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\krist\Documents\Universitetet\semester9\TBA4560\Software\HoloLens\UWP\HololensGPS\UnityEngine.HoloLens.dll">
       <PackagePath>UnityEngine.HoloLens.dll</PackagePath>
-      <Modified>2018-01-09T12:19:48.079</Modified>
+      <Modified>2018-01-19T10:12:37.245</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\krist\Documents\Universitetet\semester9\TBA4560\Software\HoloLens\UWP\HololensGPS\UnityEngine.Networking.dll">
       <PackagePath>UnityEngine.Networking.dll</PackagePath>
-      <Modified>2018-01-09T12:19:48.169</Modified>
+      <Modified>2018-01-19T10:12:37.320</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\krist\Documents\Universitetet\semester9\TBA4560\Software\HoloLens\UWP\HololensGPS\bin\x86\Debug\Core\HololensGPS.exe">
       <PackagePath>HololensGPS.exe</PackagePath>
-      <Modified>2018-01-09T12:19:48.434</Modified>
+      <Modified>2018-01-19T10:12:37.620</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

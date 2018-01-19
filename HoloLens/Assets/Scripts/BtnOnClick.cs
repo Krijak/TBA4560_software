@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HoloToolkit.Unity;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,24 +9,25 @@ public class BtnOnClick : MonoBehaviour {
 
     public Button startPositionBtn;
     public Button endPositionBtn;
-    public Text localStartTxt;
-    public Text localEndTxt;
+    public Text holoStartTxt;
+    public Text holoEndTxt;
     public Text globalStartTxt;
     public Text globalEndTxt;
     public Text azimuthTxt;
     public Text northTxt;
     public Text eastTxt;
     public Text globalRelativeTxt;
-    public Text localRelativeTxt;
+    public Text holoRelativeTxt;
     public Text debugTxt;
     public GameObject pyramid;
     public GameObject refObject;
     public GameObject mainObject;
+    public Vector2 globalPositonRefObject;
 
-    private Vector3 localStartPosition;
-    private Vector3 localEndPosition;
-    private Vector3 localNorth;
-    private Vector3 localEast;
+    private Vector3 holoStartPosition;
+    private Vector3 holoEndPosition;
+    private Vector3 holoNorth;
+    private Vector3 holoEast;
     private Vector3 camPos;
     private Vector2 globalNorth;
     private Vector2 globalStartPosition;
@@ -38,53 +40,53 @@ public class BtnOnClick : MonoBehaviour {
         Button startBtn = startPositionBtn.GetComponent<Button>();
         Button endBtn = endPositionBtn.GetComponent<Button>();
 
-        startBtn.onClick.AddListener(delegate { SetGlobalAndLocalPosition(true); });
+        startBtn.onClick.AddListener(delegate { SetGlobalAndholoPosition(true); });
         endBtn.onClick.AddListener(SetEndPosition);
-
     }
 	
 	// Update is called once per frame
 	void Update () {
-        if(localNorth != Vector3.zero){
+        if(holoNorth != Vector3.zero){
             //make pyramid point at north
-            pyramid.transform.rotation = Quaternion.LookRotation(localNorth);
+            pyramid.transform.rotation = Quaternion.LookRotation(holoNorth);
         }
     }
 
-    void SetGlobalAndLocalPosition(bool isStart) {
+    void SetGlobalAndholoPosition(bool isStart) {
         camPos = Camera.main.transform.position;
         if (isStart)
         {
             if (debug)
             {
                 globalStartPosition = new Vector2( 70, 50 );
-                localStartPosition = new Vector3(0, 0, 0);
+                globalPositonRefObject = new Vector2(71, 50);
+                holoStartPosition = new Vector3(0, 0, 0);
             }
             else
             {
                 globalStartPosition = GetGlobalPosition();
-                localStartPosition = new Vector3(camPos.x, 0, camPos.z);
+                holoStartPosition = new Vector3(camPos.x, 0, camPos.z);
             }
 
             Debug.Log("pressed Start");
-            localStartTxt.text = "LocalStart: " + localStartPosition.ToString();
+            holoStartTxt.text = "holoStart: " + holoStartPosition.ToString();
             globalStartTxt.text = "GlobalStart: " + globalStartPosition.ToString();
         }
         else
         {
             if (debug)
             {
-                globalEndPosition = new Vector2( 72, 52 );
-                localEndPosition = new Vector3(2.82843f, 0, 0);
+                globalEndPosition = new Vector2( 69, 51 );
+                holoEndPosition = new Vector3(1, 0, 1);
             }
             else
             {
                 globalEndPosition = GetGlobalPosition();
-                localEndPosition = new Vector3(camPos.x, 0, camPos.z);
+                holoEndPosition = new Vector3(camPos.x, 0, camPos.z);
             }
 
             Debug.Log("pressed End");
-            localEndTxt.text = "LocalEnd: " + localEndPosition.ToString();
+            holoEndTxt.text = "holoEnd: " + holoEndPosition.ToString();
             globalEndTxt.text = "GlobalEnd: " + globalEndPosition.ToString();
 
 
@@ -98,34 +100,34 @@ public class BtnOnClick : MonoBehaviour {
         Vector3 direction;
         Vector3 heading;
 
-        //Sets global and local end position
-        SetGlobalAndLocalPosition(false);
+        //Sets global and holo end position
+        SetGlobalAndholoPosition(false);
 
-        //The distanse walked from local start position to local end position
-        heading = localEndPosition - localStartPosition;
+        //The distanse walked from holo start position to holo end position
+        heading = holoEndPosition - holoStartPosition;
 
         //normalizing
         direction = heading / heading.magnitude;
-        localRelativeTxt.text = (heading.ToString() + " " + direction.ToString());
+        holoRelativeTxt.text = (heading.ToString() + " " + direction.ToString());
 
         //which direction we moved relative to north
         float angle = DefineNorth();
 
         azimuthTxt.text = "Azimuth: " + angle.ToString();
 
-        //local north: the direction we moved rotated by the angle we moved relative to north
-        localNorth = Quaternion.Euler(0, angle, 0)*direction;
-        localEast = Quaternion.Euler(0, angle + 90, 0) * direction;
-        Debug.Log("localNort: " + localNorth);
+        //holo north: the direction we moved rotated by the angle we moved relative to north
+        holoNorth = Quaternion.Euler(0, angle, 0)*direction;
+        holoEast = Quaternion.Euler(0, angle + 90, 0) * direction;
+        Debug.Log("holoNort: " + holoNorth);
 
-        Debug.DrawLine(localStartPosition, localEndPosition, Color.blue, 1000000, false);//walked
-        Debug.DrawRay(localStartPosition, localNorth, Color.white, 1000000, false);
-        Debug.DrawRay(localStartPosition, localEast, Color.black, 1000000, false);
-        Debug.DrawRay(localStartPosition, transform.right, Color.red, 1000000, false);//x-axis?
+        Debug.DrawLine(holoStartPosition, holoEndPosition, Color.blue, 1000000, false);//walked
+        Debug.DrawRay(holoStartPosition, holoNorth, Color.white, 1000000, false);
+        Debug.DrawRay(holoStartPosition, holoEast, Color.black, 1000000, false);
+        Debug.DrawRay(holoStartPosition, transform.right, Color.red, 1000000, false);//x-axis?
         
         Debug.Log("Sat end position: " + heading);
 
-        PlaceHologram(new Vector2(71, 50));
+        PlaceHologram();
     }
 
     private float DefineNorth()
@@ -157,15 +159,18 @@ public class BtnOnClick : MonoBehaviour {
             {
                 //Debug.Log("-e, -n " + angle);
                 angle = 180 - angle;
+                debugTxt.text = debugTxt.text + "  moved SW";
             }
             else if (start2end.x > 0)
             {
                 //Debug.Log("-e, +n " + angle);
                 angle = 270 + angle;
+                debugTxt.text = debugTxt.text + "  moved NW";
             }
             else
             {
                 //Debug.Log("rett vest? " + angle);
+                debugTxt.text = debugTxt.text + "  moved W";
             }
         }
         //+east
@@ -176,6 +181,7 @@ public class BtnOnClick : MonoBehaviour {
             {
                // Debug.Log("+e, -n " + angle);
                 angle = 90 + angle;
+                debugTxt.text = debugTxt.text + "  moved SE";
             }
             //+north
             else if ( start2end.x > 0)
@@ -183,11 +189,13 @@ public class BtnOnClick : MonoBehaviour {
                 //Debug.Log("+e, +n " + angle);
                 //angle = 180 + angle;
                 angle = 270 + angle;
+                debugTxt.text = debugTxt.text + "  moved NE";
             }
             else
             {
                 //Debug.Log("rett øst? " + angle);
                 angle = 180 + angle;
+                debugTxt.text = debugTxt.text + "  moved E";
             }
         }
         return angle;
@@ -198,7 +206,6 @@ public class BtnOnClick : MonoBehaviour {
     private Vector2 GetGlobalPosition()
     {
         //DO A CHECK WHETHER THIS IS NUMBERS AND OR VALID
-        //SHOULD BE NORTH AND EAST AND NOT LAT AND LONG
         float e = float.Parse(eastTxt.text);
         float n = float.Parse(northTxt.text);
         Debug.Log(eastTxt.text);
@@ -206,7 +213,7 @@ public class BtnOnClick : MonoBehaviour {
         return globalPosition;
     }
 
-    private void PlaceHologram(Vector2 globalPositonRefObject)
+    private void PlaceHologram()
     {
         Debug.Log("globalPositionRefObject " + globalPositonRefObject);
         Debug.Log("globalEndPosition " + globalEndPosition);
@@ -216,37 +223,39 @@ public class BtnOnClick : MonoBehaviour {
         Vector3 relativeUTMCoordinatesRefObject = new Vector3(globalPositonRefObject[1]- globalEndPosition[1], 0, globalPositonRefObject[0]-globalEndPosition[0]);
         Debug.Log("relativeUTMCoordinatesRefObject " + relativeUTMCoordinatesRefObject);
 
-        //Vector that points from refObject to mainObject, how mainObject is placed in respect to refObject
+        //Vector that points from refObject to mainObject, how mainObject is located in respect to refObject
         Vector3 refObject2mainObject = mainObject.transform.localPosition - refObject.transform.localPosition;
         Debug.Log("realativeUTMCoordinatesMainObject " + refObject2mainObject + relativeUTMCoordinatesRefObject);
         Debug.Log("refObject2mainObject: " + refObject2mainObject);
         
-        //Transforms from realitveGlobal to local
-        Vector3 localPositionRefObject = GetPositionInLocalCoordSys(relativeUTMCoordinatesRefObject);
-        Vector3 localPositionMainObject = GetPositionInLocalCoordSys((refObject2mainObject+relativeUTMCoordinatesRefObject));
+        //Transforms from realitveGlobal to holo
+        Vector3 holoPositionRefObject = GetPositionInholoCoordSys(relativeUTMCoordinatesRefObject);
+        Vector3 holoPositionMainObject = GetPositionInholoCoordSys((refObject2mainObject+relativeUTMCoordinatesRefObject));
         Debug.Log("refObject2mainObject magnitude: " + refObject2mainObject.magnitude);
-        Debug.Log("refObject2mainObject magnitude AFTER: " + (localPositionMainObject-localPositionRefObject).magnitude);
+        Debug.Log("refObject2mainObject magnitude AFTER: " + (holoPositionMainObject-holoPositionRefObject).magnitude);
 
         //instansiates objects and rotates mainObject towards north
-        GameObject mainObj = Instantiate(mainObject, localPositionMainObject, Quaternion.FromToRotation(transform.forward, localNorth));
-        Instantiate(refObject, localPositionRefObject, Camera.main.transform.rotation);
+        GameObject mainObj = Instantiate(mainObject, holoPositionMainObject, Quaternion.FromToRotation(transform.forward, holoNorth));
+        Instantiate(refObject, holoPositionRefObject, Camera.main.transform.rotation);
         PlaceOnGround(mainObj);
-        Debug.Log("Instansiate refObject at: " + localPositionRefObject);
+
+        //Adds world anchor to object
+        WorldAnchorManager.Instance.AttachAnchor(mainObj, "mainObj");
+        Debug.Log("Instansiate refObject at: " + holoPositionRefObject);
     }
 
-    //Uses Eucledian transformation to get coordinates from realitveUTM to local
-    //Preserves length and angle (position and orientation)
-    private Vector3 GetPositionInLocalCoordSys(Vector3 position)
+    // Transformations that preserves length and angle (position and orientation)
+    private Vector3 GetPositionInholoCoordSys(Vector3 position)
     {
 
-        Quaternion q = Quaternion.FromToRotation(transform.forward, localNorth);
+        Quaternion q = Quaternion.FromToRotation(transform.forward, holoNorth);
 
         //rotate
         position = Quaternion.Euler(q.eulerAngles) * position;
         Debug.Log("Rotert posisjon: " + position);
 
         //translate
-        position = new Vector3(localEndPosition[0] + position[0], 0, localEndPosition[2] + position[2]);
+        position = new Vector3(holoEndPosition[0] + position[0], 0, holoEndPosition[2] + position[2]);
         Debug.Log("Translert posisjon: " + position);
 
         return position;
@@ -260,14 +269,16 @@ public class BtnOnClick : MonoBehaviour {
         //bool AlignNormals;
         //Vector3 UpVector = new Vector3(0, 90, 0);
         debugTxt.text = debugTxt.text + " PlaceOnGround";
-        
-        Bounds bounds = go.GetComponent<Renderer>().bounds;                     // get the renderer's bounds
+
+        // get the bounds of the GameObejct
+        Bounds bounds = go.GetComponent<Renderer>().bounds;                    
         Debug.Log("PlaceOnGround");
         String rayCast = Physics.Raycast(go.transform.position, -Vector3.up, out hit).ToString();
 
         debugTxt.text = debugTxt.text + " RayCast: " + rayCast;
 
-        if (Physics.Raycast(go.transform.position, -Vector3.up, out hit))       // check if raycast hits something
+        // check if raycast hits a collider
+        if (Physics.Raycast(go.transform.position, -Vector3.up, out hit))
         {
             
             yOffset = go.transform.position.y - bounds.min.y;
