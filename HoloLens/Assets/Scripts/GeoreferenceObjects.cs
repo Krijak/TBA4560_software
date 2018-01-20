@@ -79,8 +79,8 @@ public class GeoreferenceObjects : MonoBehaviour {
         {
             if (debug)
             {
-                globalEndPosition = new Vector2(67, 49);
-                holoEndPosition = new Vector3(3, 0, 1);
+                globalEndPosition = new Vector2(72, 51);
+                holoEndPosition = new Vector3(2, 0, 1);
             }
             else
             {
@@ -150,11 +150,11 @@ public class GeoreferenceObjects : MonoBehaviour {
 
         Debug.Log("global north: " + globalNorth);
 
-        return FindClockWiseAngle(start2end, globalNorth, false);
+        return FindClockWiseAngle(start2end, globalNorth);
 
     }
 
-    private float FindClockWiseAngle(Vector2 from, Vector2 to, bool transform)
+    private float FindClockWiseAngle(Vector2 from, Vector2 to)
     {
 
         // (used to determine if angle is positive or negative)
@@ -168,6 +168,8 @@ public class GeoreferenceObjects : MonoBehaviour {
         // whereas a negative value means we're on the left.
         float sign = Mathf.Sign(Vector3.Dot(to, referenceRight));
         float finalAngle = sign * angle;
+
+        Debug.Log("SIGNED ANGLE!!!!!!!!!!: " + finalAngle);
 
         if (from.x < 0 && from.y < 0)
         {
@@ -186,9 +188,9 @@ public class GeoreferenceObjects : MonoBehaviour {
         }
         else
         {
-            finalAngle = -finalAngle;
+            finalAngle = 360 - finalAngle;
         }
-
+        Debug.Log("FINAL ANGLE!!!!!!!!!!: " + finalAngle);
         return finalAngle;
 
     }
